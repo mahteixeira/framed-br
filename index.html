@@ -12,7 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
-  <title>Document</title>
+  <title>Framed BR</title>
 </head>
 
 <body>
@@ -57,10 +57,18 @@
       </div>
     </div>
 
-    <!-- BOTÃO RESPOSTA -->
-    <div class="resposta">
-      <button onclick="mostrarProximo()">Resposta</button>
+    <!--INPUT RESPOSTA-->
+    <div autocomplete="off" class="resposta">
+      <div class="autocomplete" style="width:300px;">
+        <input id="myInput" type="text" name="resp-titulo" placeholder="Digite aqui...">
+      </div>
+
+      <!-- BOTÃO RESPOSTA -->
+      <button class="btn-resposta" id="input-resposta">Resposta</button>
+      <button class="btn-pular" onclick="mostrarProximo()">Pular</button>
     </div>
+
+
 
   </div>
 
