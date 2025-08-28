@@ -7,7 +7,6 @@ const numero = Math.floor(Math.random() * totalPastas) + 1;
 // monta caminho da imagem
 const caminho = `imagens/${numero}/frame1.jpeg`; // ajuste extensão se for .jpg
 
-const inputresposta = document.getElementById("input-resposta");
 
 // coloca no src
 document.getElementById("imagem").src = caminho;
@@ -17,7 +16,7 @@ document.getElementById("imagem").src = caminho;
 var titulos = ["As Branquelas", "Minha Mãe É Uma Peça", "Minha Mãe É Uma Peça 2", "Minha Mãe É Uma Peça 3", 
     "As Patricinhas de Bervely Hills", "Rio", "Rio 2"];
 
-autocomplete(document.getElementById("myInput"), titulos);
+autocomplete(document.getElementById("input-resposta"), titulos);
 
 
 function mudarFrame(num) {
@@ -153,4 +152,21 @@ function autocomplete(inp, arr) {
 document.addEventListener("click", function (e) {
     closeAllLists(e.target);
 });
+}
+
+
+//Validando resposta correta 
+function validarResposta() {
+  let inputresposta = document.getElementById("input-resposta").value.trim().toLowerCase();
+  const respotacerta = titulos[numero - 1].trim().toLowerCase();
+
+  console.log("Digitado:", inputresposta);
+  console.log("Correto:", respotacerta);
+
+  if (inputresposta === respotacerta) {
+    alert("RESPOSTA CERTA");
+  } else {
+    alert("RESPOSTA ERRADA, TENTE NOVAMENTE");
+    mostrarProximo();
+  }
 }

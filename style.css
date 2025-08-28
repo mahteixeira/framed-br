@@ -1,111 +1,145 @@
+/* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    font: Poppins, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background-color: #40444f;
-}
-
-button {
-    all: unset;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 0;
 }
 
 .container {
-    background-color: #2f3136;
-    margin: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50vw;
-    padding: 20px;
-    border-radius: 30px;
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  max-width: 700px;
+  width: 90%;
 }
 
+/* IMAGEM */
+.imagem {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.imagem img {
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.imagem img:hover {
+  transform: scale(1.02);
+}
+
+/* SELEÇÃO DE FRAMES */
 .selecionado {
-    display: flex;
-    background-color: #2f3136;
-}
-
-.btn-frame {
-    padding: 10px;
-    padding-left: 0px;
-    background-color: #2f3136;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
 }
 
 .btn-frame button {
-    padding: 10px 35px;
-    background-color: #53575f;
-    border-radius: 5px;
-    color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-frame button:hover {
-    background-color: #36393f;
+  background-color: #2980b9;
+  transform: translateY(-2px);
 }
 
-.resposta{
-  width: 600px;
+/* INPUT RESPOSTA */
+.resposta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.resposta input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 300px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.resposta input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* BOTÕES RESPOSTA E PULAR */
+.btn-resposta,
+.btn-pular {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-resposta {
-    background-color: rgb(64, 124, 3);
-    padding: 8px;
-    color: #fff;
-    border-radius: 5px;
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.btn-resposta:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
 }
 
 .btn-pular {
-    background-color: rgb(23, 30, 83);
-    padding: 8px;
-    color: #fff;
-    border-radius: 5px;
-}
-
-.autocomplete {
-  /*the container must be positioned relative:*/
-  position: relative;
-  display: inline-block;
-}
-input {
-  border: 1px solid transparent;
-  background-color: #f1f1f1;
-  padding: 10px;
-  font-size: 16px;
-}
-input[type=text] {
-  background-color: #f1f1f1;
-  width: 100%;
-}
-input[type=submit] {
-  background-color: DodgerBlue;
+  background-color: #e74c3c;
   color: #fff;
 }
+
+.btn-pular:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Autocomplete lista (se você usar) */
 .autocomplete-items {
   position: absolute;
-  border: 1px solid #d4d4d4;
-  border-bottom: none;
+  border: 1px solid #ccc;
   border-top: none;
   z-index: 99;
-  /*position the autocomplete items to be the same width as the container:*/
-  top: 100%;
-  left: 0;
-  right: 0;
+  background-color: #fff;
+  max-height: 180px;
+  overflow-y: auto;
+  border-radius: 0 0 8px 8px;
 }
+
 .autocomplete-items div {
   padding: 10px;
   cursor: pointer;
-  background-color: #fff;
-  border-bottom: 1px solid #d4d4d4;
 }
+
 .autocomplete-items div:hover {
-  /*when hovering an item:*/
-  background-color: #e9e9e9;
-}
-.autocomplete-active {
-  /*when navigating through the items using the arrow keys:*/
-  background-color: DodgerBlue !important;
-  color: #ffffff;
+  background-color: #3498db;
+  color: #fff;
 }
